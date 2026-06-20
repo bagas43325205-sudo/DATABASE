@@ -1,0 +1,132 @@
+{
+	"info": {
+		"_postman_id": "a1b2c3d4-e5f6-7a8b-9c0d-1e2f3a4b5c6d",
+		"name": "Jobsheet 10 - Perpustakaan API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "1) Tambah Anggota",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"name\": \"Bagas Idden Listiyanto\",\n    \"address\": \"Semarang, Jawa Tengah\",\n    \"phone\": \"081234567890\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/members",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "members"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "2) Tambah Buku",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"title\": \"Belajar NoSQL dan Express\",\n    \"author\": \"Lewis & Baker\",\n    \"year\": 2023,\n    \"stock\": 5\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/books",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "books"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "3) Peminjaman Baru",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"memberId\": \"GANTI_DENGAN_ID_MEMBER\",\n    \"bookId\": \"GANTI_DENGAN_ID_BUKU\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/loans",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "loans"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "4) Pengembalian Buku",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/loans/GANTI_DENGAN_ID_LOAN/return",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "loans", "GANTI_DENGAN_ID_LOAN", "return"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "5) Daftar Peminjaman Anggota",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/members/GANTI_DENGAN_ID_MEMBER/loans",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "members", "GANTI_DENGAN_ID_MEMBER", "loans"]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "6) Daftar Buku Stok Habis",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/books?stock=0",
+					"protocol": "http",
+					"host": ["localhost"],
+					"port": "3000",
+					"path": ["api", "books"],
+					"query": [
+						{
+							"key": "stock",
+							"value": "0"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
